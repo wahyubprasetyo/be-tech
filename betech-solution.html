@@ -1,0 +1,2266 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Be Tech Solution menyediakan jasa desain grafis, branding, konten media sosial, UI/UX, dan pembuatan website modern untuk bisnis." />
+  <meta name="keywords" content="jasa desain grafis, jasa desain website, branding, UI UX, Be Tech Solustion" />
+  <meta name="theme-color" content="#0b63f6" />
+  <title>Be Tech Solustion | Desain Grafis & Website</title>
+
+  <style>
+    :root {
+      --primary: #0b63f6;
+      --primary-dark: #084bbd;
+      --primary-light: #eaf3ff;
+      --sky: #58b7ff;
+      --ink: #10203a;
+      --muted: #61708a;
+      --surface: #ffffff;
+      --soft: #f5f9ff;
+      --line: #dce8f8;
+      --success: #159b64;
+      --shadow: 0 22px 60px rgba(20, 82, 160, 0.14);
+      --shadow-soft: 0 12px 35px rgba(20, 82, 160, 0.09);
+      --radius-lg: 28px;
+      --radius-md: 20px;
+      --radius-sm: 14px;
+      --container: 1180px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      font-family: Inter, "Segoe UI", Arial, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 8% 10%, rgba(88, 183, 255, 0.15), transparent 27%),
+        radial-gradient(circle at 92% 22%, rgba(11, 99, 246, 0.10), transparent 25%),
+        var(--surface);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    body.menu-open {
+      overflow: hidden;
+    }
+
+    img,
+    svg {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    textarea,
+    select {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    .container {
+      width: min(calc(100% - 40px), var(--container));
+      margin-inline: auto;
+    }
+
+    .section {
+      padding: 100px 0;
+    }
+
+    .section-soft {
+      background: linear-gradient(180deg, #f8fbff 0%, #eef6ff 100%);
+      border-block: 1px solid rgba(11, 99, 246, 0.08);
+    }
+
+    .section-heading {
+      max-width: 680px;
+      margin-bottom: 48px;
+    }
+
+    .section-heading.center {
+      text-align: center;
+      margin-inline: auto;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 8px 13px;
+      color: var(--primary-dark);
+      background: var(--primary-light);
+      border: 1px solid rgba(11, 99, 246, 0.13);
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      background: var(--primary);
+      border-radius: 999px;
+      box-shadow: 0 0 0 5px rgba(11, 99, 246, 0.10);
+    }
+
+    h1,
+    h2,
+    h3 {
+      line-height: 1.15;
+      letter-spacing: -0.035em;
+    }
+
+    h1 {
+      font-size: clamp(2.7rem, 7vw, 5.5rem);
+    }
+
+    h2 {
+      font-size: clamp(2rem, 4vw, 3.45rem);
+      margin-bottom: 18px;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+    }
+
+    .section-heading p,
+    .hero-copy,
+    .card p,
+    .contact-copy p {
+      color: var(--muted);
+    }
+
+    .skip-link {
+      position: fixed;
+      left: 14px;
+      top: -100px;
+      z-index: 2000;
+      padding: 10px 16px;
+      color: #fff;
+      background: var(--primary-dark);
+      border-radius: 10px;
+      transition: top 0.2s ease;
+    }
+
+    .skip-link:focus {
+      top: 14px;
+    }
+
+    .site-header {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 1000;
+      padding: 14px 0;
+      transition: 0.25s ease;
+    }
+
+    .site-header.scrolled {
+      background: rgba(255, 255, 255, 0.9);
+      border-bottom: 1px solid rgba(11, 99, 246, 0.10);
+      box-shadow: 0 8px 30px rgba(20, 82, 160, 0.08);
+      backdrop-filter: blur(16px);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      white-space: nowrap;
+    }
+
+    .brand-mark {
+      width: 46px;
+      height: 46px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(11, 99, 246, 0.30);
+      flex: 0 0 auto;
+    }
+
+    .brand-name {
+      font-size: 1.05rem;
+    }
+
+    .brand-name span {
+      color: var(--primary);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+      font-size: 0.94rem;
+      font-weight: 700;
+    }
+
+    .nav-links a {
+      position: relative;
+      padding: 8px 0;
+      color: #31425d;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 100%;
+      bottom: 3px;
+      height: 2px;
+      background: var(--primary);
+      border-radius: 99px;
+      transition: right 0.2s ease;
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      right: 0;
+    }
+
+    .nav-cta,
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      border: 0;
+      border-radius: 999px;
+      font-weight: 800;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+
+    .nav-cta {
+      padding: 11px 18px;
+      color: #fff;
+      background: var(--primary);
+      box-shadow: 0 10px 25px rgba(11, 99, 246, 0.25);
+    }
+
+    .nav-cta:hover,
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .nav-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      color: var(--ink);
+      background: #fff;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .nav-toggle span,
+    .nav-toggle::before,
+    .nav-toggle::after {
+      content: "";
+      width: 20px;
+      height: 2px;
+      background: currentColor;
+      border-radius: 99px;
+      transition: 0.2s ease;
+    }
+
+    .nav-toggle {
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 135px 0 80px;
+      position: relative;
+      isolation: isolate;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 11% -12% auto auto;
+      width: 520px;
+      height: 520px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(88, 183, 255, 0.25), transparent 68%);
+      filter: blur(4px);
+      z-index: -1;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      align-items: center;
+      gap: 68px;
+    }
+
+    .hero h1 span {
+      color: var(--primary);
+      position: relative;
+      display: inline-block;
+    }
+
+    .hero h1 span::after {
+      content: "";
+      position: absolute;
+      left: 2%;
+      right: 0;
+      bottom: 3%;
+      height: 0.18em;
+      background: rgba(88, 183, 255, 0.28);
+      z-index: -1;
+      border-radius: 999px;
+      transform: rotate(-1deg);
+    }
+
+    .hero-copy {
+      max-width: 640px;
+      margin: 26px 0 34px;
+      font-size: 1.08rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 38px;
+    }
+
+    .btn {
+      min-height: 52px;
+      padding: 0 22px;
+    }
+
+    .btn-primary {
+      color: #fff;
+      background: linear-gradient(135deg, var(--primary), #2588ff);
+      box-shadow: 0 14px 30px rgba(11, 99, 246, 0.28);
+    }
+
+    .btn-secondary {
+      color: var(--primary-dark);
+      background: #fff;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .hero-trust {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      color: #42536d;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .trust-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .trust-item svg {
+      width: 18px;
+      height: 18px;
+      color: var(--success);
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 590px;
+    }
+
+    .visual-shell {
+      position: absolute;
+      inset: 35px 10px 35px 50px;
+      padding: 16px;
+      border: 1px solid rgba(11, 99, 246, 0.12);
+      border-radius: 34px;
+      background: rgba(255, 255, 255, 0.86);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+      transform: rotate(2deg);
+    }
+
+    .browser {
+      height: 100%;
+      overflow: hidden;
+      border-radius: 25px;
+      background: #eef6ff;
+      border: 1px solid #dbe9fb;
+    }
+
+    .browser-bar {
+      height: 52px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0 18px;
+      background: #fff;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .browser-bar i {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: #bdd3ed;
+    }
+
+    .browser-bar span {
+      width: 55%;
+      height: 22px;
+      margin-left: 8px;
+      border-radius: 999px;
+      background: #edf4fc;
+    }
+
+    .browser-content {
+      padding: 25px;
+    }
+
+    .mock-hero {
+      padding: 28px;
+      border-radius: 22px;
+      color: #fff;
+      background:
+        radial-gradient(circle at 88% 14%, rgba(255,255,255,.22), transparent 26%),
+        linear-gradient(135deg, #0b63f6, #58b7ff);
+    }
+
+    .mock-pill {
+      width: 100px;
+      height: 13px;
+      margin-bottom: 16px;
+      border-radius: 99px;
+      background: rgba(255,255,255,.55);
+    }
+
+    .mock-title {
+      width: 75%;
+      height: 18px;
+      margin-bottom: 10px;
+      border-radius: 99px;
+      background: #fff;
+    }
+
+    .mock-title.short {
+      width: 53%;
+    }
+
+    .mock-text {
+      width: 87%;
+      height: 8px;
+      margin-top: 20px;
+      border-radius: 99px;
+      background: rgba(255,255,255,.58);
+    }
+
+    .mock-text.small {
+      width: 69%;
+      margin-top: 8px;
+    }
+
+    .mock-button {
+      width: 110px;
+      height: 35px;
+      margin-top: 22px;
+      border-radius: 99px;
+      background: #fff;
+    }
+
+    .mock-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .mock-card {
+      min-height: 130px;
+      padding: 14px;
+      border-radius: 18px;
+      background: #fff;
+      box-shadow: 0 10px 20px rgba(22, 80, 150, 0.06);
+    }
+
+    .mock-icon {
+      width: 34px;
+      height: 34px;
+      margin-bottom: 16px;
+      border-radius: 11px;
+      background: var(--primary-light);
+    }
+
+    .mock-line {
+      height: 8px;
+      margin-bottom: 8px;
+      border-radius: 99px;
+      background: #d8e8fa;
+    }
+
+    .mock-line:last-child {
+      width: 70%;
+    }
+
+    .float-card {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 13px 16px;
+      border: 1px solid rgba(11, 99, 246, 0.12);
+      border-radius: 18px;
+      background: rgba(255,255,255,.93);
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(12px);
+      animation: float 4.8s ease-in-out infinite;
+    }
+
+    .float-card strong {
+      display: block;
+      font-size: 0.92rem;
+    }
+
+    .float-card small {
+      color: var(--muted);
+    }
+
+    .float-icon {
+      display: grid;
+      place-items: center;
+      width: 39px;
+      height: 39px;
+      color: #fff;
+      background: var(--primary);
+      border-radius: 13px;
+    }
+
+    .float-card.one {
+      left: 0;
+      top: 20%;
+    }
+
+    .float-card.two {
+      right: -8px;
+      bottom: 17%;
+      animation-delay: -1.6s;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-11px); }
+    }
+
+    .stats {
+      position: relative;
+      z-index: 5;
+      margin-top: -26px;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: var(--line);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .stat {
+      padding: 25px;
+      text-align: center;
+      background: #fff;
+    }
+
+    .stat strong {
+      display: block;
+      color: var(--primary);
+      font-size: 1.85rem;
+      line-height: 1.2;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 0.88rem;
+      font-weight: 700;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      position: relative;
+      overflow: hidden;
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, 0.92);
+      box-shadow: var(--shadow-soft);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+
+    .card::after {
+      content: "";
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      right: -62px;
+      top: -62px;
+      border-radius: 50%;
+      background: rgba(88, 183, 255, 0.12);
+      transition: transform 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(11, 99, 246, 0.24);
+      box-shadow: var(--shadow);
+    }
+
+    .card:hover::after {
+      transform: scale(1.4);
+    }
+
+    .service-icon {
+      display: grid;
+      place-items: center;
+      width: 54px;
+      height: 54px;
+      margin-bottom: 23px;
+      color: #fff;
+      border-radius: 17px;
+      background: linear-gradient(135deg, var(--primary), var(--sky));
+      box-shadow: 0 12px 24px rgba(11, 99, 246, 0.22);
+    }
+
+    .service-icon svg {
+      width: 26px;
+      height: 26px;
+    }
+
+    .card h3 {
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+    }
+
+    .service-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      margin-top: 20px;
+      color: var(--primary);
+      font-weight: 800;
+      font-size: 0.92rem;
+    }
+
+    .service-link span {
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover .service-link span {
+      transform: translateX(4px);
+    }
+
+    .portfolio-filter {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    .filter-btn {
+      min-height: 42px;
+      padding: 0 17px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: #40516b;
+      background: #fff;
+      font-weight: 800;
+      font-size: 0.88rem;
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover {
+      color: #fff;
+      border-color: var(--primary);
+      background: var(--primary);
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 20px;
+    }
+
+    .project {
+      grid-column: span 4;
+      position: relative;
+      overflow: hidden;
+      min-height: 320px;
+      border: 1px solid rgba(11, 99, 246, 0.11);
+      border-radius: var(--radius-md);
+      background: #dcecff;
+      box-shadow: var(--shadow-soft);
+      cursor: pointer;
+      isolation: isolate;
+    }
+
+    .project.large {
+      grid-column: span 8;
+    }
+
+    .project-visual {
+      position: absolute;
+      inset: 0;
+      transition: transform 0.5s cubic-bezier(.2,.8,.2,1);
+    }
+
+    .project:hover .project-visual {
+      transform: scale(1.055);
+    }
+
+    .project-overlay {
+      position: absolute;
+      inset: auto 0 0;
+      z-index: 2;
+      padding: 70px 23px 23px;
+      color: #fff;
+      background: linear-gradient(180deg, transparent, rgba(4, 31, 73, 0.88));
+    }
+
+    .project-overlay small {
+      display: block;
+      margin-bottom: 4px;
+      color: #beddff;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .project-overlay h3 {
+      font-size: 1.35rem;
+    }
+
+    .visual-brand {
+      background:
+        radial-gradient(circle at 20% 20%, rgba(255,255,255,.44), transparent 24%),
+        linear-gradient(135deg, #0b63f6, #8ed0ff);
+    }
+
+    .visual-brand::before {
+      content: "N";
+      position: absolute;
+      inset: 50% auto auto 50%;
+      transform: translate(-50%, -58%);
+      display: grid;
+      place-items: center;
+      width: 150px;
+      height: 150px;
+      border-radius: 42px;
+      color: var(--primary);
+      background: #fff;
+      font-size: 6rem;
+      font-weight: 950;
+      box-shadow: 0 30px 70px rgba(8, 75, 189, 0.25);
+    }
+
+    .visual-web {
+      background:
+        linear-gradient(135deg, rgba(8,75,189,.95), rgba(61,167,255,.84)),
+        linear-gradient(#fff,#fff);
+    }
+
+    .visual-web::before {
+      content: "";
+      position: absolute;
+      inset: 38px 45px;
+      border: 10px solid rgba(255,255,255,.94);
+      border-radius: 22px;
+      background:
+        linear-gradient(#d7eaff 0 0) 18px 18px / 55% 14px no-repeat,
+        linear-gradient(#fff 0 0) 18px 54px / calc(100% - 36px) 42% no-repeat,
+        linear-gradient(#d7eaff 0 0) 18px calc(100% - 42px) / 29% 18px no-repeat,
+        linear-gradient(#d7eaff 0 0) center calc(100% - 42px) / 29% 18px no-repeat,
+        linear-gradient(#d7eaff 0 0) calc(100% - 18px) calc(100% - 42px) / 29% 18px no-repeat,
+        #edf6ff;
+      box-shadow: 0 28px 60px rgba(1, 36, 94, 0.25);
+    }
+
+    .visual-social {
+      background: linear-gradient(145deg, #f5fbff, #cde8ff);
+    }
+
+    .visual-social::before,
+    .visual-social::after {
+      content: "";
+      position: absolute;
+      width: 170px;
+      height: 215px;
+      border-radius: 22px;
+      background:
+        linear-gradient(135deg, var(--primary), var(--sky)) 0 0 / 100% 58% no-repeat,
+        #fff;
+      box-shadow: 0 24px 60px rgba(9, 72, 145, 0.22);
+    }
+
+    .visual-social::before {
+      left: 18%;
+      top: 14%;
+      transform: rotate(-10deg);
+    }
+
+    .visual-social::after {
+      right: 16%;
+      top: 22%;
+      transform: rotate(8deg);
+    }
+
+    .visual-pack {
+      background:
+        radial-gradient(circle at 75% 24%, rgba(255,255,255,.65), transparent 20%),
+        linear-gradient(135deg, #a9d9ff, #0b63f6);
+    }
+
+    .visual-pack::before {
+      content: "";
+      position: absolute;
+      width: 175px;
+      height: 210px;
+      left: 50%;
+      top: 48%;
+      transform: translate(-50%, -50%) rotate(-8deg);
+      border-radius: 15px 15px 34px 34px;
+      background:
+        linear-gradient(135deg, #fff, #d9edff);
+      box-shadow: 0 30px 70px rgba(4, 44, 102, 0.25);
+    }
+
+    .visual-pack::after {
+      content: "FRESH";
+      position: absolute;
+      left: 50%;
+      top: 45%;
+      transform: translate(-50%, -50%) rotate(-8deg);
+      color: var(--primary);
+      font-size: 1.5rem;
+      font-weight: 950;
+      letter-spacing: .12em;
+    }
+
+    .visual-ui {
+      background: linear-gradient(145deg, #102c62, #0b63f6);
+    }
+
+    .visual-ui::before {
+      content: "";
+      position: absolute;
+      inset: 34px 58px;
+      border-radius: 30px;
+      border: 8px solid #fff;
+      background:
+        radial-gradient(circle at 50% 25%, #58b7ff 0 18px, transparent 19px),
+        linear-gradient(#eaf4ff 0 0) center 38% / 55% 10px no-repeat,
+        linear-gradient(#c6e3ff 0 0) center 47% / 35% 8px no-repeat,
+        linear-gradient(135deg, #fff, #d7ecff);
+      box-shadow: 0 30px 60px rgba(0, 24, 68, 0.32);
+    }
+
+    .visual-poster {
+      background:
+        linear-gradient(45deg, transparent 45%, rgba(255,255,255,.25) 45% 55%, transparent 55%),
+        linear-gradient(135deg, #0b63f6, #89d0ff);
+    }
+
+    .visual-poster::before {
+      content: "MOVE\A FORWARD";
+      white-space: pre;
+      position: absolute;
+      inset: 32px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      border: 2px solid rgba(255,255,255,.72);
+      color: #fff;
+      font-size: 2.45rem;
+      line-height: .92;
+      font-weight: 950;
+      letter-spacing: -.05em;
+    }
+
+    .project.hidden {
+      display: none;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: 0.82fr 1.18fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .process-panel {
+      position: relative;
+      min-height: 500px;
+      overflow: hidden;
+      border-radius: 32px;
+      background:
+        radial-gradient(circle at 25% 20%, rgba(255,255,255,.22), transparent 24%),
+        linear-gradient(145deg, #084bbd, #39a5ff);
+      box-shadow: var(--shadow);
+    }
+
+    .process-panel::before {
+      content: "";
+      position: absolute;
+      width: 280px;
+      height: 280px;
+      right: -50px;
+      bottom: -45px;
+      border: 48px solid rgba(255,255,255,.12);
+      border-radius: 50%;
+    }
+
+    .process-card {
+      position: absolute;
+      left: 12%;
+      right: 12%;
+      top: 15%;
+      padding: 28px;
+      border: 1px solid rgba(255,255,255,.28);
+      border-radius: 24px;
+      color: #fff;
+      background: rgba(255,255,255,.14);
+      box-shadow: 0 26px 70px rgba(0, 40, 100, .25);
+      backdrop-filter: blur(16px);
+    }
+
+    .process-card h3 {
+      font-size: 1.65rem;
+      margin-bottom: 14px;
+    }
+
+    .process-card p {
+      color: rgba(255,255,255,.8);
+    }
+
+    .process-card .mini-badge {
+      display: inline-flex;
+      padding: 7px 12px;
+      margin-bottom: 18px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.18);
+      font-size: .8rem;
+      font-weight: 800;
+    }
+
+    .process-card .bars {
+      display: grid;
+      gap: 10px;
+      margin-top: 25px;
+    }
+
+    .process-card .bars span {
+      height: 11px;
+      border-radius: 99px;
+      background: rgba(255,255,255,.25);
+    }
+
+    .process-card .bars span:first-child { width: 88%; }
+    .process-card .bars span:nth-child(2) { width: 67%; }
+    .process-card .bars span:nth-child(3) { width: 75%; }
+
+    .steps {
+      display: grid;
+      gap: 14px;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: 56px 1fr;
+      gap: 17px;
+      padding: 21px;
+      border: 1px solid transparent;
+      border-radius: 18px;
+      transition: 0.2s ease;
+    }
+
+    .step:hover {
+      border-color: var(--line);
+      background: #fff;
+      box-shadow: var(--shadow-soft);
+      transform: translateX(5px);
+    }
+
+    .step-number {
+      display: grid;
+      place-items: center;
+      width: 52px;
+      height: 52px;
+      color: var(--primary);
+      background: var(--primary-light);
+      border: 1px solid rgba(11, 99, 246, 0.12);
+      border-radius: 16px;
+      font-weight: 950;
+    }
+
+    .step h3 {
+      margin: 3px 0 7px;
+    }
+
+    .step p {
+      color: var(--muted);
+      font-size: .94rem;
+    }
+
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .testimonial {
+      padding: 27px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: #fff;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .stars {
+      color: #ffb92e;
+      letter-spacing: 2px;
+      margin-bottom: 16px;
+    }
+
+    .testimonial blockquote {
+      color: #354661;
+      font-size: .98rem;
+      margin-bottom: 24px;
+    }
+
+    .client {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+    }
+
+    .avatar {
+      display: grid;
+      place-items: center;
+      width: 46px;
+      height: 46px;
+      color: #fff;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--sky));
+      font-weight: 900;
+    }
+
+    .client strong {
+      display: block;
+      font-size: .94rem;
+    }
+
+    .client span {
+      color: var(--muted);
+      font-size: .83rem;
+    }
+
+    .cta-box {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 30px;
+      padding: 45px;
+      color: #fff;
+      border-radius: 30px;
+      background:
+        radial-gradient(circle at 87% 20%, rgba(255,255,255,.18), transparent 22%),
+        linear-gradient(135deg, #084bbd, #1789ff);
+      box-shadow: var(--shadow);
+    }
+
+    .cta-box h2 {
+      max-width: 700px;
+      margin-bottom: 10px;
+      font-size: clamp(1.9rem, 4vw, 3rem);
+    }
+
+    .cta-box p {
+      color: rgba(255,255,255,.8);
+    }
+
+    .cta-box .btn {
+      color: var(--primary-dark);
+      background: #fff;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: .82fr 1.18fr;
+      gap: 52px;
+      align-items: start;
+    }
+
+    .contact-copy {
+      position: sticky;
+      top: 120px;
+    }
+
+    .contact-copy h2 {
+      max-width: 540px;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      color: #40516b;
+      font-weight: 700;
+    }
+
+    .contact-item i {
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      color: var(--primary);
+      background: var(--primary-light);
+      border-radius: 13px;
+      font-style: normal;
+    }
+
+    .contact-form {
+      padding: 32px;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .field {
+      display: grid;
+      gap: 8px;
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    .field label {
+      font-size: .88rem;
+      font-weight: 800;
+      color: #34455f;
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      padding: 13px 15px;
+      border: 1px solid #cfdef1;
+      border-radius: 13px;
+      color: var(--ink);
+      background: #fbfdff;
+      outline: none;
+      transition: border-color .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+
+    .field textarea {
+      min-height: 145px;
+      resize: vertical;
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      border-color: var(--primary);
+      background: #fff;
+      box-shadow: 0 0 0 4px rgba(11, 99, 246, .10);
+    }
+
+    .form-note {
+      margin-top: 13px;
+      color: var(--muted);
+      font-size: .79rem;
+    }
+
+    .form-status {
+      display: none;
+      margin-bottom: 18px;
+      padding: 13px 15px;
+      border-radius: 13px;
+      color: #0a6743;
+      background: #e8fff5;
+      border: 1px solid #b5efd7;
+      font-size: .9rem;
+      font-weight: 700;
+    }
+
+    .form-status.show {
+      display: block;
+    }
+
+    .site-footer {
+      padding: 40px 0 24px;
+      color: #d6e6ff;
+      background: #071b3b;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr .8fr;
+      gap: 45px;
+      padding-bottom: 32px;
+    }
+
+    .footer-brand p {
+      max-width: 430px;
+      margin-top: 16px;
+      color: #9fb6d7;
+    }
+
+    .footer-title {
+      margin-bottom: 15px;
+      color: #fff;
+      font-size: .92rem;
+      font-weight: 900;
+    }
+
+    .footer-links {
+      display: grid;
+      gap: 10px;
+      list-style: none;
+      color: #9fb6d7;
+    }
+
+    .footer-links a:hover {
+      color: #fff;
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding-top: 23px;
+      border-top: 1px solid rgba(255,255,255,.10);
+      color: #809abd;
+      font-size: .84rem;
+    }
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      background: rgba(3, 19, 45, .78);
+      backdrop-filter: blur(10px);
+    }
+
+    .modal.open {
+      display: flex;
+    }
+
+    .modal-dialog {
+      width: min(850px, 100%);
+      overflow: hidden;
+      border-radius: 25px;
+      background: #fff;
+      box-shadow: 0 30px 100px rgba(0,0,0,.35);
+      animation: modalIn .25s ease;
+    }
+
+    @keyframes modalIn {
+      from { opacity: 0; transform: scale(.95) translateY(10px); }
+      to { opacity: 1; transform: scale(1) translateY(0); }
+    }
+
+    .modal-preview {
+      min-height: 430px;
+      position: relative;
+    }
+
+    .modal-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 22px 24px;
+    }
+
+    .modal-content p {
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .modal-close {
+      position: absolute;
+      right: 18px;
+      top: 18px;
+      z-index: 4;
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      border: 0;
+      border-radius: 50%;
+      color: var(--ink);
+      background: rgba(255,255,255,.92);
+      box-shadow: 0 10px 30px rgba(0,0,0,.16);
+      font-size: 1.35rem;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(25px);
+      transition: opacity .65s ease, transform .65s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 980px) {
+      .nav-links {
+        position: fixed;
+        inset: 78px 20px auto;
+        display: none;
+        padding: 22px;
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        background: rgba(255,255,255,.96);
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(16px);
+      }
+
+      .nav-links.open {
+        display: grid;
+        gap: 6px;
+      }
+
+      .nav-links a {
+        display: block;
+        padding: 12px 10px;
+      }
+
+      .nav-cta {
+        display: none;
+      }
+
+      .nav-toggle {
+        display: flex;
+      }
+
+      .hero-grid,
+      .process-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .hero-visual {
+        min-height: 560px;
+      }
+
+      .services-grid,
+      .testimonials {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .project,
+      .project.large {
+        grid-column: span 6;
+      }
+
+      .contact-copy {
+        position: static;
+      }
+
+      .cta-box {
+        grid-template-columns: 1fr;
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer-brand {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .container {
+        width: min(calc(100% - 28px), var(--container));
+      }
+
+      .section {
+        padding: 76px 0;
+      }
+
+      .hero {
+        padding-top: 120px;
+      }
+
+      .hero-grid {
+        gap: 35px;
+      }
+
+      .hero-actions {
+        display: grid;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+      }
+
+      .hero-visual {
+        min-height: 440px;
+      }
+
+      .visual-shell {
+        inset: 20px 0 20px 8px;
+        padding: 9px;
+        border-radius: 25px;
+      }
+
+      .browser {
+        border-radius: 19px;
+      }
+
+      .browser-content {
+        padding: 14px;
+      }
+
+      .mock-hero {
+        padding: 20px;
+      }
+
+      .mock-grid {
+        gap: 8px;
+      }
+
+      .mock-card {
+        min-height: 100px;
+        padding: 10px;
+      }
+
+      .float-card {
+        padding: 10px 12px;
+      }
+
+      .float-card.one {
+        left: -5px;
+      }
+
+      .float-card.two {
+        right: -5px;
+      }
+
+      .services-grid,
+      .testimonials,
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project,
+      .project.large {
+        grid-column: 1 / -1;
+        min-height: 285px;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .stat {
+        padding: 20px 12px;
+      }
+
+      .stat strong {
+        font-size: 1.55rem;
+      }
+
+      .process-panel {
+        min-height: 420px;
+      }
+
+      .process-card {
+        left: 8%;
+        right: 8%;
+      }
+
+      .step {
+        grid-template-columns: 46px 1fr;
+        padding: 16px 8px;
+      }
+
+      .step-number {
+        width: 44px;
+        height: 44px;
+      }
+
+      .cta-box,
+      .contact-form {
+        padding: 25px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-brand {
+        grid-column: auto;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+      }
+
+      .modal-preview {
+        min-height: 300px;
+      }
+
+      .modal-content {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Lewati ke konten</a>
+
+  <header class="site-header" id="header">
+    <div class="container nav">
+      <a class="brand" href="#home" aria-label="Be Tech Solustion">
+        <svg class="brand-mark" viewBox="0 0 64 64" role="img" aria-label="Logo Be Tech Solustion">
+          <defs>
+            <linearGradient id="logoGradient" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#0b63f6"/>
+              <stop offset="100%" stop-color="#58b7ff"/>
+            </linearGradient>
+          </defs>
+          <rect width="64" height="64" rx="20" fill="url(#logoGradient)"/>
+          <path d="M18 15h18.5C44 15 49 19.2 49 25.3c0 4.1-2.3 7.1-5.9 8.6 4.8 1.3 7.4 4.7 7.4 9.3C50.5 50 45 54 36.7 54H18V15zm17.2 15.7c4.1 0 6.3-1.6 6.3-4.6 0-2.9-2.2-4.4-6.3-4.4h-9.6v9h9.6zm.8 16.5c4.5 0 6.8-1.7 6.8-4.9 0-3.1-2.3-4.8-6.8-4.8H25.6v9.7H36z" fill="#fff"/>
+          <circle cx="50" cy="14" r="6" fill="#fff" opacity=".92"/>
+        </svg>
+        <span class="brand-name">Be Tech <span>Solustion</span></span>
+      </a>
+
+      <nav aria-label="Navigasi utama">
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#layanan">Produk/Jasa</a></li>
+          <li><a href="#galeri">Galeri</a></li>
+          <li><a href="#testimoni">Testimoni</a></li>
+          <li><a href="#kontak">Kontak</a></li>
+        </ul>
+      </nav>
+
+      <a class="nav-cta" href="#kontak">Mulai Proyek</a>
+
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Buka menu">
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Creative Digital Studio</span>
+          <h1>Desain yang membuat bisnis <span>lebih menonjol.</span></h1>
+          <p class="hero-copy">
+            Be Tech Solustion membantu bisnis membangun identitas visual dan website modern
+            yang kuat, konsisten, responsif, serta siap meningkatkan kepercayaan pelanggan.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#kontak">
+              Konsultasi Gratis
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+            <a class="btn btn-secondary" href="#galeri">Lihat Portofolio</a>
+          </div>
+
+          <div class="hero-trust">
+            <span class="trust-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4L19 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Revisi terarah
+            </span>
+            <span class="trust-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4L19 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Desain responsif
+            </span>
+            <span class="trust-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4L19 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              File siap digunakan
+            </span>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-label="Ilustrasi tampilan website modern">
+          <div class="visual-shell">
+            <div class="browser">
+              <div class="browser-bar">
+                <i></i><i></i><i></i><span></span>
+              </div>
+              <div class="browser-content">
+                <div class="mock-hero">
+                  <div class="mock-pill"></div>
+                  <div class="mock-title"></div>
+                  <div class="mock-title short"></div>
+                  <div class="mock-text"></div>
+                  <div class="mock-text small"></div>
+                  <div class="mock-button"></div>
+                </div>
+                <div class="mock-grid">
+                  <div class="mock-card">
+                    <div class="mock-icon"></div>
+                    <div class="mock-line"></div>
+                    <div class="mock-line"></div>
+                  </div>
+                  <div class="mock-card">
+                    <div class="mock-icon"></div>
+                    <div class="mock-line"></div>
+                    <div class="mock-line"></div>
+                  </div>
+                  <div class="mock-card">
+                    <div class="mock-icon"></div>
+                    <div class="mock-line"></div>
+                    <div class="mock-line"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="float-card one">
+            <span class="float-icon">✓</span>
+            <span><strong>Desain Modern</strong><small>Visual profesional</small></span>
+          </div>
+
+          <div class="float-card two">
+            <span class="float-icon">↗</span>
+            <span><strong>Siap Tumbuh</strong><small>Fokus pada konversi</small></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats" aria-label="Statistik perusahaan">
+      <div class="container">
+        <div class="stats-grid reveal">
+          <div class="stat"><strong>150+</strong><span>Proyek Kreatif</span></div>
+          <div class="stat"><strong>98%</strong><span>Klien Puas</span></div>
+          <div class="stat"><strong>5+</strong><span>Tahun Pengalaman</span></div>
+          <div class="stat"><strong>24 Jam</strong><span>Respons Awal</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="layanan">
+      <div class="container">
+        <div class="section-heading center reveal">
+          <span class="eyebrow">Produk & Jasa</span>
+          <h2>Solusi kreatif untuk setiap kebutuhan bisnis</h2>
+          <p>
+            Mulai dari identitas merek hingga website, setiap layanan dirancang agar
+            bisnis Anda tampil konsisten dan mudah dipercaya.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <article class="card reveal">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L8 18l-4 1 1-4L16.5 3.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>Desain Grafis</h3>
+            <p>Materi promosi, poster, brosur, banner, katalog, dan kebutuhan visual bisnis lainnya.</p>
+            <a class="service-link" href="#kontak">Pesan layanan <span>→</span></a>
+          </article>
+
+          <article class="card reveal">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" stroke-width="2"/><path d="M3 9h18M8 4v5" stroke="currentColor" stroke-width="2"/></svg>
+            </div>
+            <h3>Desain Website</h3>
+            <p>Landing page dan website bisnis modern, cepat, responsif, serta nyaman digunakan.</p>
+            <a class="service-link" href="#kontak">Pesan layanan <span>→</span></a>
+          </article>
+
+          <article class="card reveal">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M5 19V8l7-4 7 4v11l-7 3-7-3Z" stroke="currentColor" stroke-width="2"/><path d="m5 8 7 4 7-4M12 12v10" stroke="currentColor" stroke-width="2"/></svg>
+            </div>
+            <h3>Branding & Logo</h3>
+            <p>Logo, sistem warna, tipografi, dan panduan merek untuk identitas yang lebih kuat.</p>
+            <a class="service-link" href="#kontak">Pesan layanan <span>→</span></a>
+          </article>
+
+          <article class="card reveal">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none"><rect x="4" y="3" width="16" height="18" rx="3" stroke="currentColor" stroke-width="2"/><path d="M8 8h8M8 12h8M8 16h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+            <h3>Konten Media Sosial</h3>
+            <p>Desain feed, story, carousel, dan kampanye visual yang konsisten dengan karakter merek.</p>
+            <a class="service-link" href="#kontak">Pesan layanan <span>→</span></a>
+          </article>
+
+          <article class="card reveal">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M4 7h16M7 4v6M17 4v6M5 20h14a1 1 0 0 0 1-1V7H4v12a1 1 0 0 0 1 1Z" stroke="currentColor" stroke-width="2"/><path d="M8 13h3M13 13h3M8 16h3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+            <h3>Desain UI/UX</h3>
+            <p>Wireframe dan antarmuka aplikasi yang intuitif, terstruktur, dan sesuai kebutuhan pengguna.</p>
+            <a class="service-link" href="#kontak">Pesan layanan <span>→</span></a>
+          </article>
+
+          <article class="card reveal">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M6 3h12v18H6z" stroke="currentColor" stroke-width="2"/><path d="M9 7h6M9 11h6M9 15h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+            <h3>Company Profile</h3>
+            <p>Company profile digital maupun cetak untuk memperkenalkan bisnis secara profesional.</p>
+            <a class="service-link" href="#kontak">Pesan layanan <span>→</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="galeri">
+      <div class="container">
+        <div class="section-heading center reveal">
+          <span class="eyebrow">Galeri Karya</span>
+          <h2>Portofolio yang memadukan strategi dan estetika</h2>
+          <p>Klik setiap proyek untuk melihat tampilan yang lebih besar.</p>
+        </div>
+
+        <div class="portfolio-filter reveal" aria-label="Filter galeri">
+          <button class="filter-btn active" data-filter="all">Semua</button>
+          <button class="filter-btn" data-filter="branding">Branding</button>
+          <button class="filter-btn" data-filter="website">Website</button>
+          <button class="filter-btn" data-filter="social">Media Sosial</button>
+        </div>
+
+        <div class="gallery">
+          <article class="project large reveal" data-category="branding" data-title="Identitas Merek Nova" data-desc="Logo dan sistem visual untuk perusahaan teknologi.">
+            <div class="project-visual visual-brand"></div>
+            <div class="project-overlay">
+              <small>Branding</small>
+              <h3>Identitas Merek Nova</h3>
+            </div>
+          </article>
+
+          <article class="project reveal" data-category="website" data-title="Website Arunika" data-desc="Landing page korporat dengan tampilan bersih dan modern.">
+            <div class="project-visual visual-web"></div>
+            <div class="project-overlay">
+              <small>Website</small>
+              <h3>Website Arunika</h3>
+            </div>
+          </article>
+
+          <article class="project reveal" data-category="social" data-title="Konten Sosial Lumi" data-desc="Sistem konten Instagram untuk merek gaya hidup.">
+            <div class="project-visual visual-social"></div>
+            <div class="project-overlay">
+              <small>Media Sosial</small>
+              <h3>Konten Sosial Lumi</h3>
+            </div>
+          </article>
+
+          <article class="project reveal" data-category="branding" data-title="Kemasan FreshBite" data-desc="Desain kemasan cerah untuk produk makanan ringan.">
+            <div class="project-visual visual-pack"></div>
+            <div class="project-overlay">
+              <small>Branding</small>
+              <h3>Kemasan FreshBite</h3>
+            </div>
+          </article>
+
+          <article class="project large reveal" data-category="website" data-title="UI Aplikasi Finansial" data-desc="Antarmuka aplikasi finansial yang sederhana dan aman.">
+            <div class="project-visual visual-ui"></div>
+            <div class="project-overlay">
+              <small>UI/UX</small>
+              <h3>UI Aplikasi Finansial</h3>
+            </div>
+          </article>
+
+          <article class="project reveal" data-category="social" data-title="Kampanye Move Forward" data-desc="Seri poster digital untuk kampanye inspiratif.">
+            <div class="project-visual visual-poster"></div>
+            <div class="project-overlay">
+              <small>Media Sosial</small>
+              <h3>Kampanye Move Forward</h3>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container process-grid">
+        <div class="process-panel reveal">
+          <div class="process-card">
+            <span class="mini-badge">Proses Terstruktur</span>
+            <h3>Setiap desain dimulai dari kebutuhan bisnis.</h3>
+            <p>Kami menyusun arah visual berdasarkan tujuan, target audiens, dan karakter merek.</p>
+            <div class="bars"><span></span><span></span><span></span></div>
+          </div>
+        </div>
+
+        <div>
+          <div class="section-heading reveal">
+            <span class="eyebrow">Cara Kerja</span>
+            <h2>Proses jelas, hasil lebih terarah</h2>
+            <p>Alur kerja sederhana agar Anda selalu mengetahui perkembangan proyek.</p>
+          </div>
+
+          <div class="steps">
+            <div class="step reveal">
+              <div class="step-number">01</div>
+              <div>
+                <h3>Diskusi kebutuhan</h3>
+                <p>Kami mempelajari tujuan, target pasar, referensi, dan ruang lingkup proyek.</p>
+              </div>
+            </div>
+            <div class="step reveal">
+              <div class="step-number">02</div>
+              <div>
+                <h3>Konsep & eksplorasi</h3>
+                <p>Tim mengembangkan arah visual dan alternatif desain yang paling relevan.</p>
+              </div>
+            </div>
+            <div class="step reveal">
+              <div class="step-number">03</div>
+              <div>
+                <h3>Revisi terarah</h3>
+                <p>Masukan Anda diterapkan secara sistematis hingga hasil terasa tepat.</p>
+              </div>
+            </div>
+            <div class="step reveal">
+              <div class="step-number">04</div>
+              <div>
+                <h3>Finalisasi</h3>
+                <p>File akhir disiapkan sesuai format penggunaan digital maupun cetak.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="testimoni">
+      <div class="container">
+        <div class="section-heading center reveal">
+          <span class="eyebrow">Testimoni</span>
+          <h2>Apa kata klien kami</h2>
+          <p>Pengalaman kolaborasi dari bisnis yang mempercayakan kebutuhan visualnya kepada kami.</p>
+        </div>
+
+        <div class="testimonials">
+          <article class="testimonial reveal">
+            <div class="stars" aria-label="5 dari 5 bintang">★★★★★</div>
+            <blockquote>
+              “Tim Be Tech Solustion memahami kebutuhan brand kami dengan cepat.
+              Hasil logo dan company profile terlihat jauh lebih profesional.”
+            </blockquote>
+            <div class="client">
+              <div class="avatar">AR</div>
+              <div><strong>Andi Ramadhan</strong><span>Founder, Arunika Group</span></div>
+            </div>
+          </article>
+
+          <article class="testimonial reveal">
+            <div class="stars" aria-label="5 dari 5 bintang">★★★★★</div>
+            <blockquote>
+              “Website baru kami lebih rapi, cepat, dan mudah digunakan dari ponsel.
+              Proses pengerjaan juga jelas dari awal sampai final.”
+            </blockquote>
+            <div class="client">
+              <div class="avatar">SN</div>
+              <div><strong>Sinta Nabila</strong><span>Marketing Manager, Lumi</span></div>
+            </div>
+          </article>
+
+          <article class="testimonial reveal">
+            <div class="stars" aria-label="5 dari 5 bintang">★★★★★</div>
+            <blockquote>
+              “Desain konten media sosial menjadi lebih konsisten dan interaksi pelanggan meningkat.
+              Komunikasinya responsif dan revisinya terarah.”
+            </blockquote>
+            <div class="client">
+              <div class="avatar">DP</div>
+              <div><strong>Dimas Pratama</strong><span>Owner, FreshBite</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="cta-box reveal">
+          <div>
+            <h2>Punya ide? Mari ubah menjadi visual yang kuat.</h2>
+            <p>Ceritakan kebutuhan proyek Anda dan dapatkan konsultasi awal tanpa biaya.</p>
+          </div>
+          <a class="btn" href="#kontak">Diskusikan Proyek</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="kontak">
+      <div class="container contact-grid">
+        <div class="contact-copy reveal">
+          <span class="eyebrow">Hubungi Kami</span>
+          <h2>Mari mulai proyek kreatif Anda</h2>
+          <p>
+            Isi form berikut dengan informasi singkat mengenai kebutuhan Anda.
+            Tim kami akan memberikan respons awal maksimal dalam 24 jam kerja.
+          </p>
+
+          <div class="contact-list">
+            <div class="contact-item"><i>✉</i><span>hello@betechsolustion.com</span></div>
+            <div class="contact-item"><i>☎</i><span>+62 812-3456-7890</span></div>
+            <div class="contact-item"><i>⌂</i><span>Indonesia — Melayani proyek secara online</span></div>
+          </div>
+        </div>
+
+        <form class="contact-form reveal" id="contactForm" novalidate>
+          <div class="form-status" id="formStatus" role="status">
+            Pesan berhasil disiapkan. Tim Be Tech Solustion akan menghubungi Anda.
+          </div>
+
+          <div class="form-grid">
+            <div class="field">
+              <label for="name">Nama lengkap</label>
+              <input id="name" name="name" type="text" placeholder="Nama Anda" required />
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="nama@email.com" required />
+            </div>
+            <div class="field">
+              <label for="phone">Nomor WhatsApp</label>
+              <input id="phone" name="phone" type="tel" placeholder="+62 ..." required />
+            </div>
+            <div class="field">
+              <label for="service">Layanan yang dibutuhkan</label>
+              <select id="service" name="service" required>
+                <option value="">Pilih layanan</option>
+                <option>Desain Grafis</option>
+                <option>Desain Website</option>
+                <option>Branding & Logo</option>
+                <option>Konten Media Sosial</option>
+                <option>Desain UI/UX</option>
+                <option>Company Profile</option>
+              </select>
+            </div>
+            <div class="field full">
+              <label for="message">Ceritakan kebutuhan Anda</label>
+              <textarea id="message" name="message" placeholder="Contoh: Saya membutuhkan landing page untuk bisnis kuliner..." required></textarea>
+            </div>
+            <div class="field full">
+              <button class="btn btn-primary" type="submit">Kirim Pesan</button>
+              <p class="form-note">
+                Form ini menggunakan validasi sisi pengguna. Hubungkan ke Formspree, Netlify Forms,
+                atau backend Anda agar pesan masuk ke email/database.
+              </p>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="#home">
+            <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true">
+              <defs>
+                <linearGradient id="logoGradientFooter" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#0b63f6"/>
+                  <stop offset="100%" stop-color="#58b7ff"/>
+                </linearGradient>
+              </defs>
+              <rect width="64" height="64" rx="20" fill="url(#logoGradientFooter)"/>
+              <path d="M18 15h18.5C44 15 49 19.2 49 25.3c0 4.1-2.3 7.1-5.9 8.6 4.8 1.3 7.4 4.7 7.4 9.3C50.5 50 45 54 36.7 54H18V15zm17.2 15.7c4.1 0 6.3-1.6 6.3-4.6 0-2.9-2.2-4.4-6.3-4.4h-9.6v9h9.6zm.8 16.5c4.5 0 6.8-1.7 6.8-4.9 0-3.1-2.3-4.8-6.8-4.8H25.6v9.7H36z" fill="#fff"/>
+              <circle cx="50" cy="14" r="6" fill="#fff" opacity=".92"/>
+            </svg>
+            <span class="brand-name">Be Tech <span>Solustion</span></span>
+          </a>
+          <p>Studio kreatif untuk desain grafis, branding, UI/UX, dan website modern.</p>
+        </div>
+
+        <div>
+          <div class="footer-title">Navigasi</div>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#layanan">Produk/Jasa</a></li>
+            <li><a href="#galeri">Galeri</a></li>
+            <li><a href="#testimoni">Testimoni</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-title">Layanan</div>
+          <ul class="footer-links">
+            <li><a href="#kontak">Desain Grafis</a></li>
+            <li><a href="#kontak">Desain Website</a></li>
+            <li><a href="#kontak">Branding & Logo</a></li>
+            <li><a href="#kontak">UI/UX Design</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> Be Tech Solustion. All rights reserved.</span>
+        <span>Dibuat dengan desain modern biru & putih.</span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal" id="galleryModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-dialog">
+      <div class="modal-preview" id="modalPreview">
+        <button class="modal-close" id="modalClose" aria-label="Tutup galeri">×</button>
+      </div>
+      <div class="modal-content">
+        <div>
+          <h3 id="modalTitle">Judul Proyek</h3>
+          <p id="modalDesc">Deskripsi proyek</p>
+        </div>
+        <a class="btn btn-primary" href="#kontak" id="modalCta">Buat Proyek Serupa</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const header = document.getElementById("header");
+    const navToggle = document.getElementById("navToggle");
+    const navLinks = document.getElementById("navLinks");
+    const navAnchors = [...document.querySelectorAll(".nav-links a")];
+
+    window.addEventListener("scroll", () => {
+      header.classList.toggle("scrolled", window.scrollY > 24);
+    });
+
+    navToggle.addEventListener("click", () => {
+      const open = navLinks.classList.toggle("open");
+      document.body.classList.toggle("menu-open", open);
+      navToggle.setAttribute("aria-expanded", String(open));
+    });
+
+    navAnchors.forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        document.body.classList.remove("menu-open");
+        navToggle.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    const sections = [...document.querySelectorAll("main section[id]")];
+    const activeNav = () => {
+      const position = window.scrollY + 150;
+      let current = "home";
+
+      sections.forEach(section => {
+        if (position >= section.offsetTop) current = section.id;
+      });
+
+      navAnchors.forEach(link => {
+        link.classList.toggle("active", link.getAttribute("href") === "#" + current);
+      });
+    };
+
+    window.addEventListener("scroll", activeNav);
+    activeNav();
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.14 });
+
+    document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const projects = document.querySelectorAll(".project");
+
+    filterButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        filterButtons.forEach(btn => btn.classList.remove("active"));
+        button.classList.add("active");
+
+        const filter = button.dataset.filter;
+        projects.forEach(project => {
+          project.classList.toggle(
+            "hidden",
+            filter !== "all" && project.dataset.category !== filter
+          );
+        });
+      });
+    });
+
+    const modal = document.getElementById("galleryModal");
+    const modalPreview = document.getElementById("modalPreview");
+    const modalTitle = document.getElementById("modalTitle");
+    const modalDesc = document.getElementById("modalDesc");
+    const modalClose = document.getElementById("modalClose");
+    const modalCta = document.getElementById("modalCta");
+    let lastFocusedProject = null;
+
+    projects.forEach(project => {
+      project.setAttribute("tabindex", "0");
+      project.setAttribute("role", "button");
+      project.setAttribute("aria-label", "Buka proyek " + project.dataset.title);
+
+      const openProject = () => {
+        lastFocusedProject = project;
+        const visual = project.querySelector(".project-visual").cloneNode(true);
+        visual.style.position = "absolute";
+        modalPreview.querySelectorAll(".project-visual").forEach(el => el.remove());
+        modalPreview.prepend(visual);
+        modalTitle.textContent = project.dataset.title;
+        modalDesc.textContent = project.dataset.desc;
+        modal.classList.add("open");
+        document.body.style.overflow = "hidden";
+        modalClose.focus();
+      };
+
+      project.addEventListener("click", openProject);
+      project.addEventListener("keydown", event => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          openProject();
+        }
+      });
+    });
+
+    const closeModal = () => {
+      modal.classList.remove("open");
+      document.body.style.overflow = "";
+      if (lastFocusedProject) lastFocusedProject.focus();
+    };
+
+    modalClose.addEventListener("click", closeModal);
+    modal.addEventListener("click", event => {
+      if (event.target === modal) closeModal();
+    });
+    modalCta.addEventListener("click", closeModal);
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape" && modal.classList.contains("open")) closeModal();
+    });
+
+    const form = document.getElementById("contactForm");
+    const formStatus = document.getElementById("formStatus");
+
+    form.addEventListener("submit", event => {
+      event.preventDefault();
+
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      const submitButton = form.querySelector('button[type="submit"]');
+      submitButton.disabled = true;
+      submitButton.textContent = "Mengirim...";
+
+      setTimeout(() => {
+        formStatus.classList.add("show");
+        submitButton.disabled = false;
+        submitButton.textContent = "Kirim Pesan";
+        form.reset();
+        formStatus.scrollIntoView({ behavior: "smooth", block: "center" });
+      }, 650);
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
