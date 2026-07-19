@@ -2028,13 +2028,13 @@
       <!-- Layanan yang dibutuhkan -->
 <div class="form-group">
         <label for="layanan">Layanan yang dibutuhkan</label>
-        <select id="layanan" name="layanan" required>
-          <option value="Opsi Layanan">Pilih layanan</option>
-          <option value="Desain Grafis">Desain Grafis</option>
-          <option value="Desain Website">Desain Website</option>
-          <option value="Branding and Logo">Branding & Logo</option>
-          <option value="Konten Media Sosial">Konten Media Sosial</option>
-        </select>
+<select id="layanan" name="layanan" required>
+  <option value="" disabled selected hidden>Pilih layanan</option>
+  <option value="Desain Grafis">Desain Grafis</option>
+  <option value="Desain Website">Desain Website</option>
+  <option value="Branding and Logo">Branding & Logo</option>
+  <option value="Konten Media Sosial">Konten Media Sosial</option>
+</select>
       </div>
 
       <!-- Ceritakan kebutuhan -->
@@ -2156,7 +2156,7 @@
     const kebutuhan = document.getElementById('kebutuhan').value.trim();
 
     // Validasi sederhana
-    if (!nama || !email || !whatsapp || layanan || !kebutuhan) {
+    if (!nama || !email || !whatsapp || !layanan || !kebutuhan) {
       alert('Mohon lengkapi semua field terlebih dahulu.');
       return;
     }
