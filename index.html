@@ -1991,22 +1991,6 @@
           </div>
         </div>
 
-        <form class="contact-form reveal" id="contactForm" novalidate>
-          <div class="form-status" id="formStatus" role="status">
-            Pesan berhasil disiapkan. Tim Be Tech Solution akan menghubungi Anda.
-          </div>
-
-
-
-
-
-
-
-          
-        </form>
-      </div>
-    </section>
-  </main>
 
 
 
@@ -2019,7 +2003,7 @@
 <!-- Form Kirim Pesan WhatsApp -->
 <section class="whatsapp-form-section">
   <div class="form-container">
-    <h2>Kirim Pesan via WhatsApp</h2>
+    <h2>Kirim Pesan</h2>
     <p>Isi form di bawah ini, lalu klik tombol untuk langsung chat kami di WhatsApp.</p>
 
     <form id="waForm" onsubmit="kirimWhatsApp(event)">
@@ -2048,7 +2032,7 @@
           <option value="" disabled selected>Pilih layanan</option>
           <option value="Desain Grafis">Desain Grafis</option>
           <option value="Desain Website">Desain Website</option>
-          <option value="Branding & Logo">Branding & Logo</option>
+          <option value="Branding dan Logo">Branding & Logo</option>
           <option value="Konten Media Sosial">Konten Media Sosial</option>
         </select>
       </div>
@@ -2169,7 +2153,7 @@
     const kebutuhan = document.getElementById('kebutuhan').value.trim();
 
     // Validasi sederhana
-    if (!nama || !email || !whatsapp || !kebutuhan) {
+    if (!nama || !email || !whatsapp || !layanan || !kebutuhan) {
       alert('Mohon lengkapi semua field terlebih dahulu.');
       return;
     }
