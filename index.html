@@ -2026,9 +2026,15 @@
       </div>
 
       <!-- Layanan yang dibutuhkan -->
-      <div class="form-group">
+<div class="form-group">
         <label for="layanan">Layanan yang dibutuhkan</label>
-         <textarea id="layanan" name="layanan" rows="3"  placeholder="Design Grafis / Design Website / Branding Logo / Konten Media Sosial" required></textarea>
+        <select id="layanan" name="layanan" required>
+          <option value="Opsi Layanan">Pilih layanan</option>
+          <option value="Desain Grafis">Desain Grafis</option>
+          <option value="Desain Website">Desain Website</option>
+          <option value="Branding & Logo">Branding & Logo</option>
+          <option value="Konten Media Sosial">Konten Media Sosial</option>
+        </select>
       </div>
 
       <!-- Ceritakan kebutuhan -->
@@ -2143,7 +2149,7 @@
     const nama      = document.getElementById('nama').value.trim();
     const email     = document.getElementById('email').value.trim();
     const whatsapp  = document.getElementById('whatsapp').value.trim();
-    const layanan   = document.getElementById('layanan').value.trim();
+    const layanan   = document.getElementById('layanan').value();
     const kebutuhan = document.getElementById('kebutuhan').value.trim();
 
     // Validasi sederhana
