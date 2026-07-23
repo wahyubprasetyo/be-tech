@@ -2144,6 +2144,16 @@
     const layanan   = (document.getElementById('layanan')?.value || '').trim();
     const kebutuhan = (document.getElementById('kebutuhan')?.value || '').trim();
 
+
+console.log('=== DEBUG VALUE FORM ===');
+    console.log('Nama      :', nama);
+    console.log('Email     :', email);
+    console.log('WhatsApp  :', whatsapp);
+    console.log('Layanan   :', layanan);          // ← lihat nilai ini
+    console.log('Kebutuhan :', kebutuhan);
+    console.log('========================');
+    
+
     // Validasi yang lebih jelas — memberitahu field mana yang kosong
     const missing = [];
     if (!nama)      missing.push('Nama Lengkap');
