@@ -2005,7 +2005,7 @@
   <div class="form-container">
     <h2>Kirim Pesan</h2>
     <p>Isi form di bawah ini, lalu klik tombol untuk langsung chat kami di WhatsApp.</p>
-
+    
     <form id="waForm" onsubmit="kirimWhatsApp(event)">
       <!-- Nama Lengkap -->
       <div class="form-group">
@@ -2026,15 +2026,15 @@
       </div>
 
       <!-- Layanan yang dibutuhkan -->
-<div class="form-group">
+      <div class="form-group">
         <label for="layanan">Layanan yang dibutuhkan</label>
-<select id="layanan" name="layanan" required>
-  <option value="" disabled selected hidden>Pilih layanan</option>
-  <option value="Desain Grafis">Desain Grafis</option>
-  <option value="Desain Website">Desain Website</option>
-  <option value="Branding and Logo">Branding & Logo</option>
-  <option value="Konten Media Sosial">Konten Media Sosial</option>
-</select>
+        <select id="layanan" name="layanan" required>
+          <option value="" disabled selected hidden>Pilih layanan</option>
+          <option value="Desain Grafis">Desain Grafis</option>
+          <option value="Desain Website">Desain Website</option>
+          <option value="Branding and Logo">Branding & Logo</option>
+          <option value="Konten Media Sosial">Konten Media Sosial</option>
+        </select>
       </div>
 
       <!-- Ceritakan kebutuhan -->
@@ -2061,30 +2061,25 @@
     padding: 0 20px;
     font-family: system-ui, -apple-system, sans-serif;
   }
-
   .form-container {
     background: #fff;
     border-radius: 16px;
     padding: 32px;
     box-shadow: 0 10px 40px rgba(0,0,0,0.08);
   }
-
   .form-container h2 {
     margin: 0 0 8px;
     font-size: 1.6rem;
     color: #111;
   }
-
   .form-container p {
     margin: 0 0 28px;
     color: #666;
     font-size: 0.95rem;
   }
-
   .form-group {
     margin-bottom: 20px;
   }
-
   .form-group label {
     display: block;
     margin-bottom: 6px;
@@ -2092,7 +2087,6 @@
     font-size: 0.9rem;
     color: #333;
   }
-
   .form-group input,
   .form-group select,
   .form-group textarea {
@@ -2104,19 +2098,16 @@
     transition: border-color 0.2s;
     box-sizing: border-box;
   }
-
   .form-group input:focus,
   .form-group select:focus,
   .form-group textarea:focus {
     outline: none;
     border-color: #25D366;
   }
-
   .form-group textarea {
     resize: vertical;
     min-height: 110px;
   }
-
   .btn-wa {
     width: 100%;
     display: flex;
@@ -2133,12 +2124,10 @@
     cursor: pointer;
     transition: background 0.2s, transform 0.15s;
   }
-
   .btn-wa:hover {
     background: #1ebe57;
     transform: translateY(-1px);
   }
-
   .btn-wa:active {
     transform: translateY(0);
   }
@@ -2146,18 +2135,25 @@
 
 <script>
   function kirimWhatsApp(event) {
-    event.preventDefault(); // mencegah form submit biasa
+    event.preventDefault();
 
-    // Ambil data dari form
-    const nama      = document.getElementById('nama').value.trim();
-    const email     = document.getElementById('email').value.trim();
-    const whatsapp  = document.getElementById('whatsapp').value.trim();
-    const layanan   = document.getElementById('layanan').value;
-    const kebutuhan = document.getElementById('kebutuhan').value.trim();
+    // Ambil nilai dengan aman (tidak akan error meski elemen tidak ditemukan)
+    const nama      = (document.getElementById('nama')?.value || '').trim();
+    const email     = (document.getElementById('email')?.value || '').trim();
+    const whatsapp  = (document.getElementById('whatsapp')?.value || '').trim();
+    const layanan   = (document.getElementById('layanan')?.value || '').trim();
+    const kebutuhan = (document.getElementById('kebutuhan')?.value || '').trim();
 
-    // Validasi sederhana
-    if (!nama || !email || !whatsapp || !layanan || !kebutuhan) {
-      alert('Mohon lengkapi semua field terlebih dahulu.');
+    // Validasi yang lebih jelas — memberitahu field mana yang kosong
+    const missing = [];
+    if (!nama)      missing.push('Nama Lengkap');
+    if (!email)     missing.push('Email');
+    if (!whatsapp)  missing.push('Nomor WhatsApp');
+    if (!layanan)   missing.push('Layanan yang dibutuhkan');
+    if (!kebutuhan) missing.push('Ceritakan kebutuhan Anda');
+
+    if (missing.length > 0) {
+      alert('Mohon lengkapi field berikut terlebih dahulu:\n\n• ' + missing.join('\n• '));
       return;
     }
 
@@ -2165,25 +2161,23 @@
     // GANTI NOMOR INI DENGAN NOMOR WHATSAPP ANDA
     // Format: 628xxxxxxxxxx (tanpa + dan tanpa spasi)
     // ==============================
-    const nomorTujuan = '628971186857'; // <-- GANTI INI
+    const nomorTujuan = '628971186857';
 
-    // Susun pesan yang akan dikirim
-    const pesan = 
+    // Susun pesan
+    const pesan =
 `Halo, saya ingin bertanya mengenai layanan.
+
 *Nama Lengkap:* ${nama}
 *Email:* ${email}
 *Nomor WhatsApp:* ${whatsapp}
 *Layanan yang dibutuhkan:* ${layanan}
-
 *Cerita kebutuhan saya:*
 ${kebutuhan}
 
 Terima kasih.`;
 
-    // Encode pesan agar aman di URL
+    // Encode & buka WhatsApp
     const pesanEncoded = encodeURIComponent(pesan);
-
-    // Buka WhatsApp
     const url = `https://wa.me/${nomorTujuan}?text=${pesanEncoded}`;
     window.open(url, '_blank');
   }
