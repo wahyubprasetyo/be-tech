@@ -2137,24 +2137,26 @@
   function kirimWhatsApp(event) {
     event.preventDefault();
 
-    // Ambil nilai dengan aman (tidak akan error meski elemen tidak ditemukan)
-    const nama      = (document.getElementById('nama')?.value || '').trim();
-    const email     = (document.getElementById('email')?.value || '').trim();
-    const whatsapp  = (document.getElementById('whatsapp')?.value || '').trim();
-    const layanan   = (document.getElementById('layanan')?.value || '').trim();
-    const kebutuhan = (document.getElementById('kebutuhan')?.value || '').trim();
+    // Ambil form yang sedang di-submit (cara paling aman & akurat)
+    const form = event.target;
 
+    // Ambil value langsung dari dalam form ini saja
+    const nama      = (form.nama?.value || '').trim();
+    const email     = (form.email?.value || '').trim();
+    const whatsapp  = (form.whatsapp?.value || '').trim();
+    const layanan   = (form.layanan?.value || '').trim();   // ← sekarang pasti benar
+    const kebutuhan = (form.kebutuhan?.value || '').trim();
 
-console.log('=== DEBUG VALUE FORM ===');
-    console.log('Nama      :', nama);
-    console.log('Email     :', email);
-    console.log('WhatsApp  :', whatsapp);
-    console.log('Layanan   :', layanan);          // ← lihat nilai ini
-    console.log('Kebutuhan :', kebutuhan);
-    console.log('========================');
-    
+    // Debug (buka Console untuk melihat)
+    console.log('=== VALUE YANG TERBACA ===');
+    console.log('Nama      →', `"${nama}"`);
+    console.log('Email     →', `"${email}"`);
+    console.log('WhatsApp  →', `"${whatsapp}"`);
+    console.log('Layanan   →', `"${layanan}"`);   // harusnya "Desain Website"
+    console.log('Kebutuhan →', `"${kebutuhan}"`);
+    console.log('==========================');
 
-    // Validasi yang lebih jelas — memberitahu field mana yang kosong
+    // Validasi
     const missing = [];
     if (!nama)      missing.push('Nama Lengkap');
     if (!email)     missing.push('Email');
@@ -2163,19 +2165,14 @@ console.log('=== DEBUG VALUE FORM ===');
     if (!kebutuhan) missing.push('Ceritakan kebutuhan Anda');
 
     if (missing.length > 0) {
-      alert('Mohon lengkapi field berikut terlebih dahulu:\n\n• ' + missing.join('\n• '));
+      alert('Mohon lengkapi field berikut:\n\n• ' + missing.join('\n• '));
       return;
     }
 
-    // ==============================
-    // GANTI NOMOR INI DENGAN NOMOR WHATSAPP ANDA
-    // Format: 628xxxxxxxxxx (tanpa + dan tanpa spasi)
-    // ==============================
+    // Nomor WhatsApp tujuan
     const nomorTujuan = '628971186857';
 
-    // Susun pesan
-    const pesan =
-`Halo, saya ingin bertanya mengenai layanan.
+    const pesan = `Halo, saya ingin bertanya mengenai layanan.
 
 *Nama Lengkap:* ${nama}
 *Email:* ${email}
@@ -2186,10 +2183,7 @@ ${kebutuhan}
 
 Terima kasih.`;
 
-    // Encode & buka WhatsApp
-    const pesanEncoded = encodeURIComponent(pesan);
-    const url = `https://wa.me/${nomorTujuan}?text=${pesanEncoded}`;
-    window.open(url, '_blank');
+    window.open(`https://wa.me/${nomorTujuan}?text=${encodeURIComponent(pesan)}`, '_blank');
   }
 </script>
 
